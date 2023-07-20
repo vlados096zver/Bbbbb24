@@ -99,12 +99,18 @@
   }
   &__table {
     display: flex;
-    @include media(sm) {
+    @include media(xs) {
       display: block;
     }
   }
   &__box {
     margin-bottom: 26px;
+    &:first-child {
+      text-align: right;
+      @include media(xs) {
+        text-align: left;
+      }
+    }
     &:not(:last-child) {
       padding-right: 40px;
     }
