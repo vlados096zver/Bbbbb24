@@ -10,6 +10,7 @@
   @media screen and (max-width: 1023px),
   screen and (max-height: 801px) {
     height: auto;
+    margin-bottom: 20px;
   }
   &__content {
     position: relative;
@@ -37,7 +38,7 @@
       font-size: 20px;
       color: #333333;
       @include media(sm) {
-        font-size: 16px;
+        font-size: 18px;
       }
       &:not(:last-child) {
         padding-bottom: 20px;

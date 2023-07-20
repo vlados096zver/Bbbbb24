@@ -40,6 +40,12 @@
     position: absolute;
     left: 6px;
     top: 40px;
+    @include media(md) {
+      top: 37px;
+    }
+    @include media(sm) {
+      top: 34px;
+    }
     svg {
       display: block;
       fill: #333;
