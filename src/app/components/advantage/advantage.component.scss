@@ -1,0 +1,68 @@
+@import 'variables';
+
+:host {
+  display: block;
+  width: calc(100% / 5 - 40px);
+  padding: 40px 35px;
+  box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.05);
+  border: 2px solid #EEEEEE;
+  border-radius: 15px;
+  margin: 0 20px;
+  margin-bottom: 40px;
+  @include media(ds) {
+    width: calc(100% / 5 - 30px);
+    padding: 40px 25px;
+    margin: 0 15px;
+    margin-bottom: 40px;
+  }
+  @include media(mdx) {
+    width: calc(100% / 3 - 30px);
+    padding: 30px 20px;
+  }
+  @include media(sm) {
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  &.isSlider {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+.advantage {
+  &__image {
+    max-width: 48px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 1.25;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    @include media(mdx) {
+      font-size: 20px;
+    }
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    text-align: center;
+    @include media(sm) {
+      font-size: 16px;
+    }
+  }
+}

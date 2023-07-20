@@ -1,0 +1,22 @@
+<header class="header" [class.isMain]="isMain">
+  <div class="container">
+      <div class="header__wrap">
+        <div class="header__logo">
+          <img src="" alt="logo">
+        </div>
+        <ul class="header__list">
+          <ng-container *ngFor="let item of menu.points">
+            <li class="header__link" (click)="menu.openMainSection(item.key)">{{item.link}}</li>
+          </ng-container>
+        </ul>
+        <div class="header__ukraine">
+          <img src="assets/img/ukraine.svg" alt="ukraine">
+        </div>
+        <div class="header__burger" (click)="menu.openMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="20" viewBox="0 0 27 20" fill="none">
+            <path d="M0 1.11111C0 0.5 0.5 0 1.11111 0H20C20.6111 0 21.1111 0.5 21.1111 1.11111C21.1111 1.72222 20.6111 2.22222 20 2.22222H1.11111C0.5 2.22222 0 1.72222 0 1.11111ZM20 17.7778H1.11111C0.5 17.7778 0 18.2778 0 18.8889C0 19.5 0.5 20 1.11111 20H20C20.6111 20 21.1111 19.5 21.1111 18.8889C21.1111 18.2778 20.6111 17.7778 20 17.7778ZM25.5556 8.88889H6.66667C6.05556 8.88889 5.55556 9.38889 5.55556 10C5.55556 10.6111 6.05556 11.1111 6.66667 11.1111H25.5556C26.1667 11.1111 26.6667 10.6111 26.6667 10C26.6667 9.38889 26.1667 8.88889 25.5556 8.88889Z"/>
+          </svg>
+        </div>
+      </div>
+  </div>
+</header>

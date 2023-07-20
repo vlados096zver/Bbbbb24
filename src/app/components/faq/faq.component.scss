@@ -1,0 +1,106 @@
+@import 'variables';
+
+.faq {
+  padding-top: 30px;
+  .btn--reg {
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  &__wrap {
+    padding-top: 40px;
+    margin-bottom: 80px;
+    @include media(mdx) {
+      padding-top: 20px;
+    }
+    @include media(sm) {
+      padding-top: 0px;
+    }
+  }
+  &__item {
+    position: relative;
+    border-bottom: 2px solid #333333;
+    padding-left: 75px;
+    padding-top: 35px;
+    @include media(mdx) {
+      padding-left: 60px;
+    }
+    @include media(sm) {
+      padding-left: 50px;
+    }
+    &.isOpen {
+      .faq__text p {
+        margin-top: 0;
+      }
+      .faq__image svg  {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  &__image {
+    position: absolute;
+    left: 6px;
+    top: 40px;
+    svg {
+      display: block;
+      fill: #333;
+      transition: .3s ease-in-out;
+    }
+  }
+  &__title {
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 1;
+    color: #333;
+    padding-bottom: 35px;
+    @include media(md) {
+      font-size: 23px;
+    }
+    @include media(sm) {
+      font-size: 18px;
+    }
+  }
+  &__text {
+    overflow: hidden;
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+      color: #333;
+      padding-bottom: 35px;
+      margin-top: -300%;
+      transition: .3s ease-in-out;
+      @include media(md) {
+        font-size: 18px;
+      }
+      @include media(sm) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__elem,
+  &__info {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333333;
+    @include media(md) {
+      font-size: 18px;
+    }
+    @include media(sm) {
+      font-size: 16px;
+    }
+  }
+  &__elem {
+    padding-bottom: 14px;
+  }
+  &__table {
+    display: flex;
+    @include media(sm) {
+      display: block;
+    }
+  }
+  &__box {
+    margin-bottom: 26px;
+    &:not(:last-child) {
+      padding-right: 40px;
+    }
+  }
+}

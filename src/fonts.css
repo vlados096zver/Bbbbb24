@@ -1,0 +1,22 @@
+
+@font-face {
+  font-family: "SFPro";
+  src: url('/assets/fonts/SFProDisplay-Regular.woff') format('woff'), url('/assets/fonts/Roboto-Light.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "SFPro";
+  src: url('/assets/fonts/SFProDisplay-Black.woff') format('woff'), url('/assets/fonts/SFProDisplay-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ShadowsIntoLight";
+  src: url('/assets/fonts/ShadowsIntoLight.woff') format('woff'), url('/assets/fonts/ShadowsIntoLight.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}

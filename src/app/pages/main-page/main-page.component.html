@@ -1,0 +1,88 @@
+<app-header [isMain]="true"></app-header>
+
+<div class="all" (wheel)="menu.scroll($event)">
+
+  <section class="info item" id="info">
+      <video id="bgLogo" autoplay muted playsinline loop>
+        <source src="./assets/video/production.mp4" type="video/mp4">
+      </video>
+    <div class="container container--info">
+      <p class="info__title">Європейський криптосервіс рідною мовою</p>
+      <p class="info__text">Користуючись нашими послугами ти зможеш не тільки безпечно та легально обміняти криптовалюту на Євро, але й без обмежень користуватися  цими коштами в країнах ЄС</p>
+      <div class="info__wrap info__wrap--inner">
+        <a href="#" class="btn btn--reg">Зареєструватись</a>
+        <button routerLink="/learn-more" class="btn btn--more">Дізнатися більше</button>
+      </div>
+      <div class="info__btn" (click)="menu.openMainSection('advantage')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+          <path d="M1 12.4286L6.71429 17M6.71429 17L12.4286 12.4286M6.71429 17V1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantage item" id="advantage">
+    <div class="container">
+      <p class="title">Наші переваги</p>
+      <div class="advantage__wrap" *ngIf="innerWidth > 1350 || innerWidth < 1024">
+        <ng-container *ngFor="let item of advantages">
+          <app-advantage [item]="item"></app-advantage>
+        </ng-container>
+      </div>
+        <div class="advantage__slider" *ngIf="innerWidth > 1023 && innerWidth < 1350">
+          <swiper [config]="configAdvantage" #swiperAdvantage>
+            <ng-template *ngFor="let item of advantages" swiperSlide>
+              <app-advantage [class.isSlider]="true" [item]="item"></app-advantage>
+            </ng-template>
+          </swiper>
+          <div class="advantage__btn advantage__btn--prev" (click)="swiperAdvantage.swiperRef.slidePrev(200)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <rect x="59" y="59" width="58" height="58" rx="29" transform="rotate(-180 59 59)" stroke-width="2"/>
+              <path d="M44.9997 30.524C44.9997 30.269 44.8983 30.0244 44.718 29.8441C44.5377 29.6637 44.2931 29.5624 44.0381 29.5624L18.1558 29.5624L28.0514 19.665C28.1458 19.577 28.2216 19.4708 28.2741 19.3529C28.3267 19.2349 28.355 19.1076 28.3572 18.9785C28.3595 18.8494 28.3358 18.7212 28.2874 18.6014C28.239 18.4817 28.1671 18.3729 28.0758 18.2816C27.9845 18.1903 27.8757 18.1183 27.756 18.07C27.6363 18.0216 27.508 17.9979 27.3789 18.0001C27.2498 18.0024 27.1225 18.0307 27.0045 18.0832C26.8866 18.1358 26.7804 18.2116 26.6924 18.306L15.1542 29.8445C14.9742 30.0248 14.873 30.2692 14.873 30.524C14.873 30.7788 14.9742 31.0232 15.1542 31.2035L26.6924 42.7419C26.8747 42.9118 27.1158 43.0042 27.3649 42.9999C27.614 42.9955 27.8516 42.8945 28.0278 42.7184C28.204 42.5422 28.3049 42.3045 28.3093 42.0554C28.3137 41.8063 28.2212 41.5652 28.0514 41.383L18.1558 31.4855L44.0381 31.4855C44.2931 31.4855 44.5377 31.3842 44.718 31.2039C44.8983 31.0236 44.9997 30.779 44.9997 30.524Z"/>
+            </svg>
+          </div>
+          <div class="advantage__btn advantage__btn--next" (click)="swiperAdvantage.swiperRef.slideNext(200)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <rect x="1" y="1" width="58" height="58" rx="29" stroke-width="2"/>
+              <path d="M15.0003 29.476C15.0003 29.731 15.1017 29.9756 15.282 30.1559C15.4623 30.3363 15.7069 30.4376 15.9619 30.4376H41.8442L31.9486 40.335C31.8542 40.423 31.7784 40.5292 31.7259 40.6471C31.6733 40.7651 31.645 40.8924 31.6428 41.0215C31.6405 41.1506 31.6642 41.2788 31.7126 41.3986C31.761 41.5183 31.8329 41.6271 31.9242 41.7184C32.0155 41.8097 32.1243 41.8817 32.244 41.93C32.3637 41.9784 32.492 42.0021 32.6211 41.9999C32.7502 41.9976 32.8775 41.9693 32.9955 41.9168C33.1134 41.8642 33.2196 41.7884 33.3076 41.694L44.8458 30.1555C45.0258 29.9752 45.127 29.7308 45.127 29.476C45.127 29.2212 45.0258 28.9768 44.8458 28.7965L33.3076 17.2581C33.1253 17.0882 32.8842 16.9958 32.6351 17.0001C32.386 17.0045 32.1484 17.1055 31.9722 17.2816C31.796 17.4578 31.6951 17.6955 31.6907 17.9446C31.6863 18.1937 31.7788 18.4348 31.9486 18.617L41.8442 28.5145H15.9619C15.7069 28.5145 15.4623 28.6158 15.282 28.7961C15.1017 28.9764 15.0003 29.221 15.0003 29.476Z"/>
+            </svg>
+          </div>
+        </div>
+
+      <div class="info__wrap">
+        <a href="#" class="btn btn--reg">Зареєструватись</a>
+        <button routerLink="/learn-more" class="btn btn--more">Дізнатися більше</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature item" id="feature">
+    <div class="container">
+      <p class="title">Для кого наш сервіс</p>
+      <div class="feature__wrap">
+        <ng-container *ngFor="let item of features">
+          <app-feature [item]="item"></app-feature>
+        </ng-container>
+      </div>
+      <p class="feature__elem">Наші рішення саме для тебе</p>
+      <div class="info__wrap">
+        <a href="#" class="btn btn--reg">Зареєструватись</a>
+        <button routerLink="/learn-more" class="btn btn--more">Дізнатися більше</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about item" id="about">
+    <div class="container">
+      <p class="title">Хто ми</p>
+      <div class="about__text">
+        <p>Ми – це Bbbbb Paaaaaa UUUU (бренд Bbbbb24) – криптовалютна компанія, що зареєстрована у відповідності до законодавства Литви. З нами ви можете обмінювати криптовалюти на Євро із зарахуванням на рахунки та картки європейських банків та платіжних систем, таких як WISE, Revolut, N26, Walletto та інших.
+        </p>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </section>
+
+</div>
+
+<app-menu-details [class.active]="menu.showMenu" class="modal"></app-menu-details>

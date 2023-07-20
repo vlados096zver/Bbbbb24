@@ -1,0 +1,66 @@
+@import 'variables';
+
+:host {
+  display: block;
+  position: relative;
+  width: calc(100% / 4 - 30px);
+  padding-top: 80px;
+  margin: 0 15px;
+  margin-bottom: 40px;
+  @media screen and (max-height: 900px) {
+    padding-top: 60px;
+  }
+  @include media(mdx) {
+    width: calc(100% / 2 - 30px);
+  }
+  @include media(sm) {
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  &:after {
+    position: absolute;
+    counter-increment: list;
+    content: counter(list);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 32px;
+    color: #fff;
+    background-color: #3961F0;
+    font-family: ShadowsIntoLight, sans-serif;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 18px;
+    width: calc(100% - 70px);
+    height: 3px;
+    border-top: 4px dotted rgba(57, 97, 240, 0.5);
+  }
+}
+
+.feature {
+  &__title {
+    font-size: 24px;
+    line-height: 1.25;
+    color: #333333;
+    padding-bottom: 20px;
+    font-weight: 700;
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    @include media(sm) {
+      font-size: 16px;
+    }
+  }
+}

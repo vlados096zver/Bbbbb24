@@ -1,0 +1,14 @@
+
+
+<div class="modal__btn" (click)="menu.openMenu()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path d="M17.7799 0.102269L9.67767 8.20453L1.5754 0.10227L0.102265 1.57541L8.20453 9.67767L0.102265 17.7799L1.5754 19.2531L9.67767 11.1508L17.7799 19.2531L19.2531 17.7799L11.1508 9.67767L19.2531 1.57541L17.7799 0.102269Z"/>
+  </svg>
+</div>
+<p class="modal__title">Меню</p>
+<ul class="menu__wrap">
+  <ng-container *ngFor="let item of menu.points; let index = index">
+    <li class="menu__link" (click)="menu.openMainSection(item.key, true)" [style.--delay]="100 * index + 'ms'">{{item.link}}</li>
+  </ng-container>
+</ul>
+
