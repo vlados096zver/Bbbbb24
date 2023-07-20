@@ -22,12 +22,7 @@ export class MainPageComponent implements OnInit {
   configAdvantage: SwiperOptions = {
     loop: true,
     slidesPerView: 3,
-    spaceBetween: 40,
-    breakpoints: {
-      320: {
-        slidesPerView: 3
-      }
-    }
+    spaceBetween: 0,
   };
 
   constructor(public menu: MenuService) {
